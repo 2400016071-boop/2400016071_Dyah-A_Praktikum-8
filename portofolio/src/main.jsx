@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom'; // Import BrowserRouter
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* Bungkus App dengan BrowserRouter */}
-    <BrowserRouter>
+    <BrowserRouter basename="/2400016071_Dyah-A_Praktikum-8/portofolio">
       <App />
     </BrowserRouter>
   </React.StrictMode>
