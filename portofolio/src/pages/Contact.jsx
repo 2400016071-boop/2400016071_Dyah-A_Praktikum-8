@@ -1,55 +1,64 @@
 function Contact() {
   return (
-    <div className="max-w-xl mx-auto bg-white p-8 rounded-lg shadow">
-      <h2 className="text-2xl font-semibold mb-6 text-center">Kontak Saya</h2>
+    <div className="min-h-screen w-full bg-pink-50 px-6 py-12 flex justify-center items-center">
+      <section className="w-full max-w-3xl bg-pink-100 rounded-3xl shadow-lg px-6 py-10 md:px-14 md:py-14">
+        
+        {/* JUDUL */}
+        <h2 className="text-3xl md:text-4xl font-semibold text-pink-700 text-center mb-6">
+          Kontak
+        </h2>
 
-      <form className="space-y-4">
-        <div>
-          <label className="block mb-1 font-medium">Nama</label>
-          <input
-            type="text"
-            placeholder="Masukkan nama"
-            className="w-full border rounded px-3 py-2"
-          />
-        </div>
+        {/* DESKRIPSI */}
+        <p className="text-pink-900 text-base md:text-lg text-center mb-10">
+          Kunjungi profil Instagram saya di{" "}
+          <a
+            href="https://www.instagram.com/dyahamr_?igsh=MWc2bmR3cXYzYTJnaA=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-pink-700 font-semibold hover:underline"
+          >
+            sini
+          </a>
+          , atau kirim pesan lewat form di bawah ini.
+        </p>
 
-        <div>
-          <label className="block mb-1 font-medium">Email</label>
-          <input
-            type="email"
-            placeholder="Masukkan email"
-            className="w-full border rounded px-3 py-2"
-          />
-        </div>
+        {/* FORM */}
+        <form className="space-y-6">
+          <div>
+            <label className="block text-pink-900 mb-2">Nama</label>
+            <input
+              type="text"
+              className="w-full px-4 py-3 rounded-xl border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400"
+              placeholder="Masukkan nama"
+            />
+          </div>
 
-        <div>
-          <label className="block mb-1 font-medium">Pesan</label>
-          <textarea
-            rows="4"
-            placeholder="Tulis pesan"
-            className="w-full border rounded px-3 py-2"
-          ></textarea>
-        </div>
+          <div>
+            <label className="block text-pink-900 mb-2">Email</label>
+            <input
+              type="email"
+              className="w-full px-4 py-3 rounded-xl border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400"
+              placeholder="Masukkan email"
+            />
+          </div>
 
-        <button
-          type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
-        >
-          Kirim Pesan
-        </button>
-      </form>
+          <div>
+            <label className="block text-pink-900 mb-2">Pesan</label>
+            <textarea
+              rows="4"
+              className="w-full px-4 py-3 rounded-xl border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400"
+              placeholder="Tulis pesan..."
+            ></textarea>
+          </div>
 
-      <p className="text-center text-gray-500 mt-6">
-        Atau hubungi saya melalui Instagram:{' '}
-        <a
-          href="https://www.instagram.com/dyahamr_?igsh=MWc2bmR3cXYzYTJnaA=="
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:underline"
-        >
-          @dyahamr_
-        </a>
-      </p>
+          <button
+            type="submit"
+            className="w-full bg-pink-600 text-white py-3 rounded-xl font-semibold hover:bg-pink-700 transition"
+          >
+            Kirim
+          </button>
+        </form>
+      </section>
     </div>
   );
 }

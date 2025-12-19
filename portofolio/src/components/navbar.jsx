@@ -1,37 +1,61 @@
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 function Navbar() {
-  // Hooks untuk mengetahui halaman yang sedang aktif
-  const location = useLocation();
+  const [open, setOpen] = useState(false);
+
+  const linkClass = ({ isActive }) =>
+    `block py-2 font-medium ${
+      isActive
+        ? "text-pink-700 border-b-2 border-pink-700"
+        : "text-pink-900 hover:text-pink-700"
+    }`;
 
   return (
-    <nav className="flex gap-4 p-4 bg-white shadow-md">
-      <Link
-        to="/"
-        className={`hover:text-blue-500 ${
-          location.pathname === '/' ? 'font-bold text-blue-600' : ''
-        }`}
-      >
-        Beranda
-      </Link>
+    <nav className="w-full bg-pink-100 shadow-md">
+      <div className="w-full px-6 md:px-10 py-4 flex justify-between items-center">
+        
+        {/* LOGO */}
+        <h1 className="text-xl font-semibold text-pink-700">
+          Dyah Amarruli
+        </h1>
 
-      <Link
-        to="/projects"
-        className={`hover:text-blue-500 ${
-          location.pathname === '/projects'
-            ? 'font-bold text-blue-600'
-            : ''
-        }`}
-      >
-        Proyek
-      </Link>
+        {/* MENU DESKTOP */}
+        <div className="hidden md:flex gap-8">
+          <NavLink to="/" className={linkClass}>
+            Home
+          </NavLink>
+          <NavLink to="/projects" className={linkClass}>
+            Projects
+          </NavLink>
+          <NavLink to="/contact" className={linkClass}>
+            Contact
+          </NavLink>
+        </div>
 
-      <Link
-        to="/contact"
-        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-      >
-        Kontak Saya
-      </Link>
+        {/* HAMBURGER MOBILE */}
+        <button
+          className="md:hidden text-pink-700 text-2xl"
+          onClick={() => setOpen(!open)}
+        >
+          ☰
+        </button>
+      </div>
+
+      {/* MENU MOBILE */}
+      {open && (
+        <div className="md:hidden bg-pink-100 px-6 pb-4 space-y-3">
+          <NavLink to="/" className={linkClass} onClick={() => setOpen(false)}>
+            Home
+          </NavLink>
+          <NavLink to="/projects" className={linkClass} onClick={() => setOpen(false)}>
+            Projects
+          </NavLink>
+          <NavLink to="/contact" className={linkClass} onClick={() => setOpen(false)}>
+            Contact
+          </NavLink>
+        </div>
+      )}
     </nav>
   );
 }
