@@ -2,12 +2,12 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
-import navbar from './components/navbar';
+import Navbar from './components/navbar';
 
 function App() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <navbar />
+      <Navbar />
 
       <div className="container mx-auto p-4">
         <Routes>
